@@ -1,290 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𓍯𝐆𝐮𝐩𝐭𝐚✿ </title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="aa.css">
-</head>
-
-<body class="text-gray-900 overflow-x-hidden">
-
-    <div id="splash-screen"
-        class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900 text-white transition-opacity duration-500">
-        <div class="w-24 h-24 mb-6">
-            <svg font-size="80" xmlns="http://www.w3.org/2000/svg">
-                <text x="20" y="100" fill="red">✿</text>
-            </svg>
-
-        </div>
-        <h1 class="text-4xl font-extrabold tracking-wider"> 𓍯𝐆𝐮𝐩𝐭𝐚✿</h1>
-        <p class="text-gray-400 mt-2"></p>
-        <div class="w-48 bg-gray-700 rounded-full h-1.5 mt-8 overflow-hidden">
-            <div class="loading-bar bg-cyan-400 h-1.5 rounded-full"></div>
-        </div>
-    </div>
-
-    <div id="app-container" class="opacity-0 transition-opacity duration-500">
-
-        <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-sm shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-20">
-                    <h1
-                        class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-                        <i class="fa-solid fa-graduation-cap">𝐒𝐞𝐥𝐞𝐜𝐭𝐢𝐨𝐧𝐖𝐚𝐲</i>
-                    </h1>
-                    <div id="search-bar-container" class="relative w-full max-w-md ml-8">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <input id="search-bar" type="text" placeholder="Search for a batch..."
-                            class="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:bg-white transition-all">
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div id="page-home" class="page">
-                   <!-- Hero Slider (Replaces Welcome Card) -->
-            <div class="slider-container" id="slider">
-                <!-- Slide 1 -->
-                <div class="slide active">
-                    <img src="https://selectionwayserver.hranker.com/courses/banners/1765199237740-WhatsApp_Image_2025-12-08_at_6.33.09_PM.jpeg"
-                        alt="Banner 1">
-                    <div class="slide-content">
-                        <h2>Selection Batch 2</h2>
-                        <p>A Journey Towards Success</p>
-                        <button class="hero-btn"
-                        onclick="confirmOpenBatch('690b0cdc6aeca24e9397ab6f', 'Selection Batch 2')">Explore
-                            Course</button>
-                    </div>
-                </div>
-                <!-- Slide 2 -->
-                
-                <div class="slide">
-                    <img src="https://selectionwayserver.hranker.com/courses/banners/1765199172618-WhatsApp_Image_2025-12-08_at_6.33.10_PM_(2).jpeg"
-                        alt="Banner 2">
-                    <div class="slide-content">
-                        <h2>Maths Special</h2>
-                        <p>Master Arithmetic & Advanced Maths with concepts that make you a champion</p>
-                        <!-- BUTTON UPDATED BELOW -->
-                        <button class="hero-btn"
-                            onclick="confirmOpenBatch('690b0fa65085387730114664', 'Maths Special')">Explore
-                            Course</button>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="slide">
-                    <img src="https://selectionwayserver.hranker.com/courses/banners/1762335998045-harish_sir_red_Science.png"
-                        alt="Banner 4">
-                    <div class="slide-content">
-                        <h2>Science Foundation</h2>
-                        <p>Accelerate your preparation with our dedicated science experts</p>
-                        <!-- BUTTON UPDATED BELOW -->
-                        <button class="hero-btn"
-                            onclick="confirmOpenBatch('68dbd32801d050d5b62e45cc', 'Science Foundation')">Explore
-                            Course</button>
-                    </div>
-                </div>
-
-                <!-- Slide 4 -->
-                <div class="slide">
-                    <img src="https://selectionwayserver.hranker.com/courses/banners/1765199250481-WhatsApp_Image_2025-12-08_at_6.33.08_PM.jpeg"
-                        alt="Banner 3">
-                    <div class="slide-content">
-                        <h2>Complete General Studies</h2>
-                        <p>History, Polity, Geography & Science - All in one place</p>
-                        <!-- BUTTON UPDATED BELOW -->
-                        <button class="hero-btn"
-                            onclick="confirmOpenBatch('68dbd69163a1698bf4194575', 'Complete General Studies')">Explore
-                            Course</button>
-                    </div>
-                </div>
-                <!-- Slide 5 -->
-                <div class="slide">
-                    <img src="https://selectionwayserver.hranker.com/courses/banners/1765199189747-WhatsApp_Image_2025-12-08_at_6.33.10_PM_(1).jpeg"
-                        alt="Banner 4">
-                    <div class="slide-content">
-                        <h2>Complete English</h2>
-                        <p>Accelerate your preparation with our dedicated English experts.</p>
-                        <!-- BUTTON UPDATED BELOW -->
-                        <button class="hero-btn"
-                            onclick="confirmOpenBatch('68dbd51563a1698bf4194573', 'Complete English')">Explore
-                            Course</button>
-                    </div>
-                </div>
-                <!-- Slide 6 -->
-                <div class="slide">
-                    <img src="https://selectionwayserver.hranker.com/courses/banners/1765199217026-WhatsApp_Image_2025-12-08_at_6.33.11_PM.jpeg"
-                        alt="Banner 5">
-                    <div class="slide-content">
-                        <h2>Complete Reasoning</h2>
-                        <p>Enhance your reasoning abilities and achieve success.</p>
-                        <!-- BUTTON UPDATED BELOW -->
-                        <button class="hero-btn"
-                            onclick="confirmOpenBatch('690b0fa65085387730114664', 'Complete Reasoning')">Explore
-                            Course</button>
-                    </div>
-                </div>
-            </div>
-            <!-- End Slider -->
-
-
-
-                <h1>𝑨𝑳𝑳 𝑩𝑨𝑻𝑪𝑯𝑬𝑺</h1>
-                <div id="home-loader" class="text-center py-10">
-                    <div
-                        class="w-10 h-10 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto">
-                    </div>
-                    <p class="mt-2 text-gray-600">Loading batches...</p>
-                </div>
-                <div id="batch-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-                <div id="no-results" class="hidden text-center py-20">
-                    <h3 class="text-xl font-semibold">No Batches Found</h3>
-                    <p class="text-gray-500">Try a different keyword.</p>
-                </div>
-            </div>
-            <div id="page-batch-menu" class="page">
-                <button id="btn-back-to-home"
-                    class="mb-6 flex items-center text-sm text-gray-700 font-semibold hover:text-cyan-600 transition-colors">
-                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    Back to All Batches
-                </button>
-                <h2 id="details-batch-title" class="text-3xl font-extrabold mb-8 pb-4 border-b-2 border-gray-200"></h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div id="menu-lectures"
-                        class="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
-                        <div class="flex flex-col items-center text-center">
-                            <div
-                                class="p-5 bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 rounded-full mb-4">
-                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2">Lectures</h3>
-                            <p class="text-gray-500">Access all video classes</p>
-                            <span
-                                class="mt-4 text-cyan-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">View
-                                Topics &rarr;</span>
-                        </div>
-                    </div>
-                    <div id="menu-pdfs"
-                        class="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-indigo-500/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
-                        <div class="flex flex-col items-center text-center">
-                            <div
-                                class="p-5 bg-gradient-to-br from-purple-100 to-indigo-100 text-indigo-600 rounded-full mb-4">
-                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9.75M8.25 2.25h1.5M8.25 6h.75M10.5 6h.75" />
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2">PDFs & Notes</h3>
-                            <p class="text-gray-500">Download all notes</p>
-                            <span
-                                class="mt-4 text-indigo-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">View
-                                All Notes &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="page-topic-list" class="page">
-                <button id="btn-back-to-menu"
-                    class="mb-6 flex items-center text-sm text-gray-700 font-semibold hover:text-cyan-600 transition-colors">
-                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    Back to Batch Menu
-                </button>
-                <h2 id="topic-list-title" class="text-3xl font-extrabold mb-8 pb-4 border-b-2 border-gray-200"></h2>
-                <div id="topic-list-loader" class="text-center py-10">
-                    <div
-                        class="w-10 h-10 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto">
-                    </div>
-                    <p class="mt-2 text-gray-600">Loading topics...</p>
-                </div>
-                <div id="topic-list-container" class="space-y-4 max-w-4xl mx-auto"></div>
-            </div>
-
-            <div id="page-content-list" class="page">
-                <button id="btn-back-to-topics"
-                    class="mb-6 flex items-center text-sm text-gray-700 font-semibold hover:text-cyan-600 transition-colors">
-                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    Back to Topics
-                </button>
-                <h2 id="content-list-title" class="text-3xl font-extrabold mb-8 pb-4 border-b-2 border-gray-200"></h2>
-                <div id="content-list-container" class="space-y-3 max-w-4xl mx-auto"></div>
-            </div>
-
-        </main>
-
-        <footer class="text-center py-8 mt-12 border-t border-gray-200">
-            <p class="text-sm text-gray-500">
-                © 2025 𓍯𝐆𝐮𝐩𝐭𝐚✿ △. All Rights Reserved
-            </p>
-        </footer>
-
-    </div>
-
-   
-
-    
+    <title>Auth Key Generator - 48 Hours Validity</title>
     <style>
-         /* --- SelectionWay - A Journey Towards Success --- */
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            margin: 0; 
+            padding: 20px; 
+            min-height: 100vh;
+            color: #333;
         }
-
-        #batch-grid>div img:first-child {
-            height: 170px;
-            object-fit: contain;
-            background-color: #f3f4f6;
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
-
-        /* Player se related CSS bhi ab yahan nahi rahega */
-        /* #videoPlayerModal { ... } */
-        /* etc. */
+        h2 { 
+            text-align: center; 
+            color: #2575fc; 
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        input:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2);
+        }
+        button {
+            padding: 14px 25px;
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 15px rgba(37, 117, 252, 0.3);
+        }
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .task-box {
+            background: #f8f9ff;
+            border-left: 5px solid #2575fc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            display: none;
+        }
+        .task-item {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .pending { background: #fff3cd; color: #856404; }
+        .completed { background: #d4edda; color: #155724; }
+        .key-display {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            display: none;
+            border: 2px dashed #28a745;
+        }
+        .timer {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #856404;
+        }
+        .warning {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        .copy-btn {
+            background: #28a745;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background: #218838;
+        }
+        .validity-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #e7f3ff;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .validity-info i {
+            color: #2575fc;
+            font-size: 18px;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-key"></i> 48 Hours Auth Key Generator</h2>
+        
+        <!-- Step 1: Paste Key -->
+        <div class="input-group">
+            <input type="text" id="authInput" placeholder="🔑 Paste your auth key here...">
+            <button onclick="verifyKey()"><i class="fas fa-check-circle"></i> Verify Key</button>
+        </div>
+        
+        <!-- Validity Info -->
+        <div class="validity-info">
+            <i class="fas fa-clock"></i>
+            <span>⚠️ Every key expires in <strong>48 hours</strong> from generation</span>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <button onclick="startProcess()" style="background: linear-gradient(to right, #28a745, #20c997); padding: 16px 40px;">
+                <i class="fas fa-bolt"></i> GENERATE NEW AUTH KEY
+            </button>
+        </div>
+        
+        <!-- Tasks Section -->
+        <div class="task-box" id="taskSection">
+            <h3><i class="fas fa-tasks"></i> Complete Tasks to Generate Key</h3>
+            <p>Complete all tasks to generate your 48-hour valid key</p>
+            
+            <!-- Task 1 -->
+            <div class="task-item">
+                <div>
+                    <strong>Task 1: Visit Shortlink</strong><br>
+                    <small>Click and wait 5 seconds on the page</small>
+                </div>
+                <a href="YOUR_FIRST_SHORTLINK_HERE" target="_blank" 
+                   onclick="completeTask(1)" class="status pending">
+                    🔗 Click Here
+                </a>
+            </div>
+            
+            <!-- Task 2 -->
+            <div class="task-item">
+                <div>
+                    <strong>Task 2: Complete Survey</strong><br>
+                    <small>Quick 2-question survey</small>
+                </div>
+                <a href="YOUR_SECOND_SHORTLINK_HERE" target="_blank" 
+                   onclick="completeTask(2)" class="status pending">
+                    📝 Start Survey
+                </a>
+            </div>
+            
+            <!-- Timer Display -->
+            <div class="timer" id="timerDisplay">
+                ⏳ Key will expire in: <span id="countdown">48:00:00</span>
+            </div>
+            
+            <!-- Generate Button -->
+            <button id="generateBtn" disabled style="width: 100%; margin-top: 20px;">
+                <i class="fas fa-lock"></i> Generate Auth Key (Complete Tasks First)
+            </button>
+        </div>
+        
+        <!-- Generated Key Display -->
+        <div class="key-display" id="keyDisplay">
+            <h3><i class="fas fa-gift"></i> Your Auth Key Generated!</h3>
+            <div class="input-group">
+                <input type="text" id="generatedKey" readonly style="background: white;">
+                <button onclick="copyKey()" class="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+            </div>
+            <div class="warning">
+                ⚠️ <strong>Important:</strong> This key will expire in <strong id="validUntil">48 hours</strong><br>
+                <small>Save it immediately and verify before expiry</small>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+            <h4><i class="fas fa-info-circle"></i> How It Works:</h4>
+            <ol>
+                <li>Click "Generate New Auth Key"</li>
+                <li>Complete both earning tasks (click links)</li>
+                <li>Copy your generated key</li>
+                <li>Paste and verify within 48 hours</li>
+                <li>After 48 hours, key expires - generate new one</li>
+            </ol>
+            <p style="color: #dc3545; font-weight: bold;">
+                <i class="fas fa-exclamation-triangle"></i> 
+                Key expires automatically after 48 hours!
+            </p>
+        </div>
+    </div>
 
-    <script src="script.min.js"></script>
-    <script src="devtools-detector.js"></script>
-
-
-   
-
+    <script src="script.js"></script>
 </body>
-
 </html>
