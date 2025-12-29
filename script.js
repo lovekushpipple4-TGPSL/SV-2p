@@ -1,8 +1,7 @@
 // Configuration - YAHAN APNE LINKS DALO
 const CONFIG = {
     // Earning Shortlinks - YAHAN APNE LINKS DALO
-    task1Link: "https://your-first-shortlink.com",
-    task2Link: "https://your-second-shortlink.com",
+    task1Link: "https://arolinks.com/dahs",
     
     // Key Settings
     keyValidityHours: 24, // Key kitne hours valid rahega
