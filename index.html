@@ -1,502 +1,307 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>48 Hours Auth Key System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Key Generator</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            min-height: 100vh;
+        * {
             margin: 0;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 500px;
-            margin: 50px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 15px;
+            padding: 0;
             box-sizing: border-box;
         }
-        
-        button {
-            width: 100%;
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e6e6e6;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 40px auto;
+            background: rgba(25, 25, 35, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
             padding: 15px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4cc9f0;
+        }
+
+        .time-text {
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 500;
+            color: #4cc9f0;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .task-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .task-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #4cc9f0;
+            border-radius: 4px;
+            margin-right: 15px;
             cursor: pointer;
-            margin-top: 10px;
-            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
-        
-        button:hover {
-            background: #218838;
-            transform: translateY(-2px);
+
+        .task-checkbox.checked {
+            background: #4cc9f0;
         }
-        
-        button:disabled {
-            background: #cccccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .task-box {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 5px solid #ffc107;
-            display: none;
-        }
-        
-        .key-box {
-            background: #d4edda;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 2px solid #28a745;
-            display: none;
-        }
-        
-        .earn-link {
-            display: block;
-            background: #ffc107;
-            color: #333;
-            text-align: center;
-            padding: 15px;
-            border-radius: 8px;
-            text-decoration: none;
+
+        .task-checkbox.checked::after {
+            content: '✓';
+            color: white;
             font-weight: bold;
-            margin: 15px 0;
-            transition: 0.3s;
         }
-        
-        .earn-link:hover {
-            background: #e0a800;
-            transform: scale(1.02);
-        }
-        
-        .status {
-            color: #28a745;
-            font-weight: bold;
-            text-align: center;
-            margin: 15px 0;
-            font-size: 18px;
-        }
-        
-        .timer {
-            background: #fff3cd;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 15px 0;
-            font-weight: bold;
-            color: #856404;
+
+        .task-text {
+            flex-grow: 1;
             font-size: 16px;
         }
-        
-        .warning {
-            background: #f8d7da;
-            color: #721c24;
+
+        .task-link {
+            color: #4cc9f0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .task-link:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 25px 0;
+        }
+
+        .access-key-section {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .key-display {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(76, 201, 240, 0.3);
+            border-radius: 12px;
+            padding: 25px 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #4cc9f0;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-all;
+        }
+
+        .instruction {
+            font-size: 15px;
+            color: #b0b0b0;
+            margin-bottom: 15px;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(76, 201, 240, 0.3);
+        }
+
+        .generate-btn:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .copy-btn {
+            width: 100%;
+            padding: 15px;
+            background: rgba(76, 201, 240, 0.1);
+            color: #4cc9f0;
+            border: 2px solid #4cc9f0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(76, 201, 240, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 14px;
+        }
+
+        .success-message {
+            background: rgba(76, 201, 240, 0.1);
+            color: #4cc9f0;
             padding: 12px;
             border-radius: 8px;
-            margin: 15px 0;
-            font-size: 14px;
-        }
-        
-        .success-msg {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 8px;
             text-align: center;
-            margin: 20px 0;
-            font-weight: bold;
+            margin: 15px 0;
             display: none;
+            font-weight: 500;
         }
-        
-        .instructions {
-            background: #e7f3ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 25px;
-            font-size: 14px;
+
+        .timer {
+            color: #ff9966;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .required {
+            color: #ff4757;
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .key-display {
+                font-size: 18px;
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>🔐 48 Hours Auth Key System</h2>
+        <h1>Access Key Generator</h1>
         
-        <!-- VERIFY SECTION -->
-        <div id="verifySection">
-            <h3>✅ Verify Your Key</h3>
-            <input type="text" id="userKey" placeholder="Paste your auth key here">
-            <button onclick="verifyKey()">🔍 VERIFY KEY</button>
-            
-            <div class="success-msg" id="successMessage">
-                ✅ Verification Successful! Redirecting...
+        <!-- Current Time Display -->
+        <div class="time-box">
+            <span class="time-text">Current Time: <span id="currentTime"></span></span>
+        </div>
+        
+        <!-- Task 1: Watch Tutorial -->
+        <div class="task-item" id="task1">
+            <div class="task-checkbox" id="checkbox1"></div>
+            <div class="task-text">
+                Watch Tutorial on YouTube
             </div>
         </div>
         
-        <hr style="margin: 30px 0;">
+        <div class="divider"></div>
         
-        <!-- GENERATE SECTION -->
-        <div id="generateSection">
-            <h3>🔑 Generate New Key</h3>
-            <p style="color: #666; text-align: center;">
-                Get 48-hour valid auth key
+        <!-- Access Key Section -->
+        <div class="access-key-section">
+            <div class="section-title">Access Key</div>
+            
+            <div class="key-display" id="keyDisplay">
+                Access key will appear here (AUTO FILL)
+            </div>
+            
+            <p class="instruction">
+                <span class="required">*</span> Generate a free access key to use our site for the next 24 hours.
             </p>
             
-            <button onclick="showTask()" style="background: #007bff;">
-                🚀 GENERATE NEW KEY
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                ✅ Key generated and copied to clipboard!
+            </div>
+            
+            <!-- Timer Display -->
+            <div class="timer" id="timerDisplay"></div>
+            
+            <!-- Generate Button -->
+            <button class="generate-btn" id="generateBtn">
+                <span>🔑</span> Generate Access Key
+            </button>
+            
+            <!-- Copy Button -->
+            <button class="copy-btn" id="copyBtn">
+                <span>📋</span> Copy Key
             </button>
         </div>
         
-        <!-- TASK SECTION -->
-        <div class="task-box" id="taskSection">
-            <h3>📋 Complete This Simple Task</h3>
-            <p>Click the link below and wait 5 seconds</p>
-            
-            <!-- YAHAN APNA EARNING LINK DALO -->
-            <a href="https://your-earning-link-here.com" 
-               target="_blank" 
-               class="earn-link" 
-               id="earningLink">
-               🔗 CLICK HERE TO EARN & CONTINUE
-            </a>
-            
-            <div class="status" id="taskStatus"></div>
-            
-            <div class="timer" id="timerBox">
-                ⏳ Key Validity: <span id="countdown">48:00:00</span>
-            </div>
-            
-            <button id="generateBtn" disabled>
-                🔒 GENERATE MY KEY
-            </button>
-        </div>
-        
-        <!-- KEY DISPLAY -->
-        <div class="key-box" id="keySection">
-            <h3>🎉 Your Auth Key Generated!</h3>
-            <input type="text" id="generatedKey" readonly>
-            <button onclick="copyKey()">📋 COPY KEY</button>
-            
-            <div class="warning">
-                ⚠️ <b>Important:</b> This key expires in <b id="expiryTime">48 hours</b>
-                <br><small>Copy it now and verify above</small>
-            </div>
-        </div>
-        
-        <!-- INSTRUCTIONS -->
-        <div class="instructions">
-            <h4>📝 How It Works:</h4>
-            <ol>
-                <li>Click <b>GENERATE NEW KEY</b></li>
-                <li>Click the <b>YELLOW LINK</b> (you'll earn from this)</li>
-                <li>Wait for <b>GENERATE MY KEY</b> button to activate</li>
-                <li>Click it to get your <b>48-hour valid key</b></li>
-                <li>Copy the key and <b>VERIFY</b> it above</li>
-                <li>After verification, you'll get access</li>
-            </ol>
+        <div class="footer">
+            studyrays - Copyright © 2024 - 2025 | Designed & Developed by DevJisu
         </div>
     </div>
 
-    <script>
-        // ==============================================
-        // YAHAN APNA EARNING LINK DALO
-        // ==============================================
-        const EARNING_LINK = "https://arolinks.com/QqBCke";
-        // ==============================================
-        
-        // Variables
-        let taskCompleted = false;
-        let keyExpiryTime = null;
-        let generatedKey = "";
-        
-        // Set earning link
-        document.getElementById('earningLink').href = EARNING_LINK;
-        
-        // ========== VERIFY KEY FUNCTION ==========
-        function verifyKey() {
-            const userInput = document.getElementById('userKey').value.trim();
-            
-            if (!userInput) {
-                alert("⚠️ Please enter an auth key first!");
-                return;
-            }
-            
-            // Get saved key data
-            const savedData = localStorage.getItem('authKeyData');
-            
-            if (!savedData) {
-                alert("❌ No key found! Please generate a new key first.");
-                return;
-            }
-            
-            try {
-                const keyData = JSON.parse(savedData);
-                const currentTime = Date.now();
-                
-                // Check if key matches
-                if (userInput !== keyData.key) {
-                    alert("❌ Invalid key! Please enter the correct key.");
-                    return;
-                }
-                
-                // Check if key expired
-                if (currentTime > keyData.expiryTime) {
-                    alert("❌ Key expired! This key was valid for 48 hours only.\nPlease generate a new key.");
-                    localStorage.removeItem('authKeyData');
-                    return;
-                }
-                
-                // SUCCESS - Show success message
-                document.getElementById('successMessage').style.display = 'block';
-                
-                // Calculate remaining time
-                const remainingTime = keyData.expiryTime - currentTime;
-                const hoursLeft = Math.floor(remainingTime / (1000 * 60 * 60));
-                const minutesLeft = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-                
-                // Success message with details
-                setTimeout(function() {
-                    alert(
-                        "✅ VERIFICATION SUCCESSFUL!\n\n" +
-                        "🔑 Key: " + keyData.key.substring(0, 10) + "...\n" +
-                        "⏳ Expires in: " + hoursLeft + " hours " + minutesLeft + " minutes\n" +
-                        "📅 Generated: " + keyData.generatedTime + "\n\n" +
-                        "Redirecting to main website..."
-                    );
-                    
-                    // YAHAN APNI MAIN WEBSITE KA LINK DALO
-                    // ====================================
-                    window.location.href = "https://s-v-web.vercel.app/";
-                    // ====================================
-                    
-                }, 1000);
-                
-            } catch (error) {
-                alert("❌ Error verifying key. Please generate a new key.");
-                localStorage.removeItem('authKeyData');
-            }
-        }
-        
-        // ========== GENERATE KEY SECTION ==========
-        function showTask() {
-            document.getElementById('taskSection').style.display = 'block';
-            taskCompleted = false;
-            document.getElementById('taskStatus').innerHTML = '';
-            document.getElementById('generateBtn').disabled = true;
-            document.getElementById('keySection').style.display = 'none';
-            
-            // Scroll to task section
-            document.getElementById('taskSection').scrollIntoView({behavior: 'smooth'});
-            
-            alert("📝 Click the YELLOW link to complete the task!");
-        }
-        
-        // When user clicks earning link
-        document.getElementById('earningLink').addEventListener('click', function(event) {
-            // Don't prevent default - let it open in new tab
-            if (!taskCompleted) {
-                // Open in new tab
-                window.open(EARNING_LINK, '_blank');
-                
-                // Mark task as completed after 5 seconds
-                setTimeout(function() {
-                    taskCompleted = true;
-                    document.getElementById('taskStatus').innerHTML = '✅ Task Completed Successfully!';
-                    document.getElementById('generateBtn').disabled = false;
-                    document.getElementById('generateBtn').innerHTML = '🎉 GENERATE KEY NOW';
-                    document.getElementById('generateBtn').style.background = '#28a745';
-                    
-                    // Make generate button clickable
-                    document.getElementById('generateBtn').onclick = generateNewKey;
-                    
-                    alert("Great! Now click GENERATE KEY NOW button.");
-                }, 5000); // 5 seconds delay
-            }
-        });
-        
-        // Generate new key
-        function generateNewKey() {
-            // Create unique key
-            const timestamp = Date.now();
-            const randomStr = Math.random().toString(36).substring(2, 10).toUpperCase();
-            generatedKey = "AUTH-" + randomStr + "-" + timestamp.toString(36).toUpperCase();
-            
-            // Set expiry 48 hours from now
-            keyExpiryTime = timestamp + (48 * 60 * 60 * 1000);
-            
-            // Save to localStorage
-            const keyData = {
-                key: generatedKey,
-                expiryTime: keyExpiryTime,
-                generatedTime: new Date().toLocaleString('en-IN')
-            };
-            
-            localStorage.setItem('authKeyData', JSON.stringify(keyData));
-            
-            // Display the key
-            document.getElementById('generatedKey').value = generatedKey;
-            document.getElementById('keySection').style.display = 'block';
-            
-            // Show expiry time
-            const expiryDate = new Date(keyExpiryTime);
-            const formattedDate = expiryDate.toLocaleString('en-IN', {
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-            
-            document.getElementById('expiryTime').textContent = formattedDate;
-            
-            // Start countdown timer
-            startCountdown();
-            
-            // Scroll to key section
-            document.getElementById('keySection').scrollIntoView({behavior: 'smooth'});
-            
-            alert(
-                "✅ Key Generated Successfully!\n\n" +
-                "🔑 Your Key: " + generatedKey + "\n" +
-                "⏳ Valid for: 48 hours\n" +
-                "📅 Expires on: " + formattedDate + "\n\n" +
-                "Copy this key and verify it above!"
-            );
-        }
-        
-        // Countdown timer
-        function startCountdown() {
-            function updateTimer() {
-                if (!keyExpiryTime) return;
-                
-                const now = Date.now();
-                const timeLeft = keyExpiryTime - now;
-                
-                if (timeLeft <= 0) {
-                    document.getElementById('countdown').textContent = "EXPIRED";
-                    document.getElementById('countdown').style.color = "red";
-                    return;
-                }
-                
-                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                const timeString = 
-                    hours.toString().padStart(2, '0') + ":" +
-                    minutes.toString().padStart(2, '0') + ":" +
-                    seconds.toString().padStart(2, '0');
-                
-                document.getElementById('countdown').textContent = timeString;
-                
-                // Color change based on time
-                if (hours < 12) {
-                    document.getElementById('countdown').style.color = "orange";
-                }
-                if (hours < 6) {
-                    document.getElementById('countdown').style.color = "red";
-                }
-            }
-            
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        }
-        
-        // Copy key function
-        function copyKey() {
-            const keyInput = document.getElementById('generatedKey');
-            keyInput.select();
-            keyInput.setSelectionRange(0, 99999);
-            
-            try {
-                navigator.clipboard.writeText(keyInput.value)
-                    .then(() => {
-                        alert("✅ Key copied to clipboard!\n\nNow paste it in the verification box above.");
-                        // Auto-focus on verify input
-                        document.getElementById('userKey').focus();
-                    })
-                    .catch(err => {
-                        // Fallback for older browsers
-                        document.execCommand('copy');
-                        alert("✅ Key copied!");
-                    });
-            } catch (err) {
-                document.execCommand('copy');
-                alert("✅ Key copied!");
-            }
-        }
-        
-        // Page load actions
-        window.onload = function() {
-            // Check for existing key data
-            const savedData = localStorage.getItem('authKeyData');
-            if (savedData) {
-                try {
-                    const keyData = JSON.parse(savedData);
-                    keyExpiryTime = keyData.expiryTime;
-                    startCountdown();
-                    
-                    // If key is expired, remove it
-                    if (Date.now() > keyExpiryTime) {
-                        localStorage.removeItem('authKeyData');
-                    }
-                } catch (error) {
-                    // Do nothing
-                }
-            }
-            
-            // Focus on verify input
-            document.getElementById('userKey').focus();
-            
-            // Auto-paste from clipboard if available
-            if (navigator.clipboard) {
-                navigator.clipboard.readText()
-                    .then(text => {
-                        if (text && text.includes('AUTH-')) {
-                            document.getElementById('userKey').value = text;
-                        }
-                    })
-                    .catch(err => {
-                        // Ignore errors
-                    });
-            }
-        };
-        
-        // Enter key press to verify
-        document.getElementById('userKey').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                verifyKey();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>
+    </html>
