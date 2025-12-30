@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studyxmax - sy </title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="aa.css">
+</head>
+<canvas id="bg-canvas" class="fixed inset-0 z-0"></canvas>
+
+<body class="text-gray-900 overflow-x-hidden">
+
+    <div id="splash-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900 text-white transition-opacity duration-500">
+        <div class="w-24 h-24 mb-6">
+            <svg class="w-full h-full text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-5.82 0-10.5 4.68-10.5 10.5S6.18 24 12 24s10.5-4.68 10.5-10.5S17.82 3 12 3zm0 1.5c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9zm0 3c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6zm0 1.5c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 0v1.5m0 7.5V15m3.2-6.3l-1.06 1.06m-4.24 4.24l-1.06 1.06m7.5-1.06l-1.06-1.06M7.86 7.86l-1.06-1.06M12 4.5V6m0 12v1.5m3.2-12.3l-1.06 1.06m-4.24 4.24l-1.06 1.06m7.5-1.06l-1.06-1.06M7.86 4.66l-1.06 1.06" />
+            </svg>
+        </div>
+        <h1 class="text-4xl font-extrabold tracking-wider"> studyxmax</h1>
+        <p class="text-gray-400 mt-2"></p>
+        <div class="w-48 bg-gray-700 rounded-full h-1.5 mt-8 overflow-hidden">
+            <div class="loading-bar bg-cyan-400 h-1.5 rounded-full"></div>
+        </div>
+    </div>
+    
+    <div id="app-container" class="opacity-0 transition-opacity duration-500">
+        
+        <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-sm shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+                        MAD.by <p>....ashu....</p>
+                    </h1>
+                    <div id="search-bar-container" class="relative w-full max-w-md ml-8">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg>
+                        </div>
+                        <input id="search-bar" type="text" placeholder="Search for a batch..." class="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:bg-white transition-all">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div id="page-home" class="page">
+                <h2 class="text-2xl font-bold mb-6"></h2>
+
+                <a href="https://t.me/StudyXMax" target="_blank" class="mb-8 flex flex-col sm:flex-row items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg hover:shadow-cyan-500/30 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center mb-4 sm:mb-0 text-center sm:text-left">
+                        <svg class="w-12 h-12 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M9.78 18.65l.28-4.23-5.06-2.54c-.67-.34-.67-1.23 0-1.57l11.96-5.45c.57-.26 1.1.2 1.01.82l-1.92 9.04c-.1.48-.5.72-.94.5l-4.1-3.23-2.03 2.15c-.2.2-.45.31-.7.31z"/>
+                        </svg>
+                        <div>
+                            <h4 class="text-xl font-bold">Join OFFICEL CHENNEL</h4>
+                            <p class="text-blue-100">FOR LETEST UPDATES!</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 sm:mt-0 bg-white text-blue-600 font-semibold px-5 py-2.5 rounded-full flex items-center whitespace-nowrap hover:bg-gray-100 transition-colors">
+                        Join Now STUDYxMAX
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+               <h1>𝔸𝕃𝕃 𝔹𝔸𝕋ℂℍ𝔼𝕊</h1> 
+                <div id="home-loader" class="text-center py-10">
+                    <div class="w-10 h-10 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                    <p class="mt-2 text-gray-600">Loading batches...</p>
+                </div>
+                <div id="batch-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+                <div id="no-results" class="hidden text-center py-20">
+                    <h3 class="text-xl font-semibold">No Batches Found</h3>
+                    <p class="text-gray-500">Try a different keyword.</p>
+                </div>
+            </div>
+            <div id="page-batch-menu" class="page">
+                <button id="btn-back-to-home" class="mb-6 flex items-center text-sm text-gray-700 font-semibold hover:text-cyan-600 transition-colors">
+                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                    Back to All Batches
+                </button>
+                <h2 id="details-batch-title" class="text-3xl font-extrabold mb-8 pb-4 border-b-2 border-gray-200"></h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div id="menu-lectures" class="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="p-5 bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-600 rounded-full mb-4">
+                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Lectures</h3>
+                            <p class="text-gray-500">Access all video classes</p>
+                            <span class="mt-4 text-cyan-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">View Topics &rarr;</span>
+                        </div>
+                    </div>
+                    <div id="menu-pdfs" class="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-indigo-500/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="p-5 bg-gradient-to-br from-purple-100 to-indigo-100 text-indigo-600 rounded-full mb-4">
+                                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9.75M8.25 2.25h1.5M8.25 6h.75M10.5 6h.75" /></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">PDFs & Notes</h3>
+                            <p class="text-gray-500">Download all notes</p>
+                            <span class="mt-4 text-indigo-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">View All Notes &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-topic-list" class="page">
+                <button id="btn-back-to-menu" class="mb-6 flex items-center text-sm text-gray-700 font-semibold hover:text-cyan-600 transition-colors">
+                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                    Back to Batch Menu
+                </button>
+                <h2 id="topic-list-title" class="text-3xl font-extrabold mb-8 pb-4 border-b-2 border-gray-200"></h2>
+                <div id="topic-list-loader" class="text-center py-10">
+                    <div class="w-10 h-10 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                    <p class="mt-2 text-gray-600">Loading topics...</p>
+                </div>
+                <div id="topic-list-container" class="space-y-4 max-w-4xl mx-auto"></div>
+            </div>
+
+            <div id="page-content-list" class="page">
+                <button id="btn-back-to-topics" class="mb-6 flex items-center text-sm text-gray-700 font-semibold hover:text-cyan-600 transition-colors">
+                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                    Back to Topics
+                </button>
+                <h2 id="content-list-title" class="text-3xl font-extrabold mb-8 pb-4 border-b-2 border-gray-200"></h2>
+                <div id="content-list-container" class="space-y-3 max-w-4xl mx-auto"></div>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 mt-12 border-t border-gray-200">
+            <p class="text-sm text-gray-500">
+                © 2025 ASHU RAJPUTE  △. All Rights Reserved
+            </p>
+        </footer>
+        
+    </div>
+
+    <div id="startupTelegramModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75 p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-sm text-center p-6 sm:p-8 transform transition-all scale-95 opacity-0" 
+             style="animation: fadeInScale 0.3s ease-out forwards;">
+            <svg class="w-16 h-16 mx-auto mb-4 text-cyan-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9.78 18.65l.28-4.23-5.06-2.54c-.67-.34-.67-1.23 0-1.57l11.96-5.45c.57-.26 1.1.2 1.01.82l-1.92 9.04c-.1.48-.5.72-.94.5l-4.1-3.23-2.03 2.15c-.2.2-.45.31-.7.31z"/>
+            </svg>
+            <h5 class="text-2xl font-bold mb-2">Welcome to STUDYXMAX!</h5>
+            <p class="text-gray-600 mb-6">Join our official Telegram </p>
+            <a href="https://t.me/StudyXMax" target="_blank" class="block w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-3 rounded-lg text-center mb-2 hover:opacity-90 transition-opacity">
+                Join Telegram
+            </a>
+            <button type="button" data-modal-close="startupTelegramModal" class="w-full text-gray-500 hover:text-gray-800 py-2 transition-colors">Close</button>
+        </div>
+    </div>
+
+    <div id="notesTelegramModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75 p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-sm text-center p-6 sm:p-8 transform transition-all scale-95 opacity-0"
+             style="animation: fadeInScale 0.3s ease-out forwards;">
+            <svg class="w-16 h-16 mx-auto mb-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9.75M8.25 2.25h1.5M8.25 6h.75M10.5 6h.75" /></svg>
+            </svg>
+            <h5 class="text-2xl font-bold mb-2">NOTICE!</h5>
+            <p class="text-gray-600 mb-6">join our Telegram channel.</p>
+            <a href="https://t.me/StudyXMax" target="_blank" class="block w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-3 rounded-lg text-center mb-2 hover:opacity-90 transition-opacity">
+                Join Telegram
+            </a>
+            <button type="button" data-modal-close="notesTelegramModal" class="w-full text-blue-600 border-2 border-blue-500 font-semibold py-2.5 rounded-lg mt-2 hover:bg-blue-50 transition-colors">
+                Continue to Batch &rarr;
+            </button>
+        </div>
+    </div>
+    
+ <a href="https://t.me/StudyXMax" target="_blank" class="mb-8 flex flex-col sm:flex-row items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg hover:shadow-cyan-500/30 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center mb-4 sm:mb-0 text-center sm:text-left">
+                        <svg class="w-12 h-12 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M9.78 18.65l.28-4.23-5.06-2.54c-.67-.34-.67-1.23 0-1.57l11.96-5.45c.57-.26 1.1.2 1.01.82l-1.92 9.04c-.1.48-.5.72-.94.5l-4.1-3.23-2.03 2.15c-.2.2-.45.31-.7.31z"/>
+                        </svg>
+                        <div>
+                            <h4 class="text-xl font-bold">Join OFFICEL CHENNEL</h4>
+                            <p class="text-blue-100">FOR LETEST UPDATES!</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 sm:mt-0 bg-white text-blue-600 font-semibold px-5 py-2.5 rounded-full flex items-center whitespace-nowrap hover:bg-gray-100 transition-colors">
+                        Join Now STUDYxMAX
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        #batch-grid > div img:first-child {
+            height: 170px;
+            object-fit: contain;
+            background-color: #f3f4f6;
+        }
+
+        /* Player se related CSS bhi ab yahan nahi rahega */
+        /* #videoPlayerModal { ... } */
+        /* etc. */
+    </style>
+    
+    <script src="script.min.js"></script>
+    <script src="devtools-detector.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Startup Modal Logic (with 2s delay) ---
+        const startupModal = document.getElementById('startupTelegramModal');
+        if (startupModal && !sessionStorage.getItem('startupModalShown')) {
+            setTimeout(() => {
+                startupModal.classList.remove('hidden');
+                startupModal.classList.add('flex');
+                sessionStorage.setItem('startupModalShown', 'true');
+            }, 2000); 
+        }
+
+        // --- Modal Close Logic ---
+        document.querySelectorAll('[data-modal-close]').forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal-close');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            });
+        });
+        
+        // ... (Tumhara notes modal ko dikhane waala logic 'script.min.js' mein yahan se trigger hoga) ...
+    });
+    </script>
+    
+    </body>
+</html>

@@ -1,0 +1,207 @@
+/* --- Font and Base --- */
+body {
+    body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #ce3131;
+    background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+    background-size: 600% 600%;
+    animation: gradientBG 30s ease infinite;
+}
+
+/* Smooth gradient animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+select#quality {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+    -webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+select#quality:hover {
+    background: rgba(0,210,255,0.2);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, #e21b1b 0%, #ff00ff 50%, transparent 70%);
+    animation: rotateBG 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateBG {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #ffffff;
+    background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+    background-size: 600% 600%;
+    animation: gradientBG 30s ease infinite;
+}
+
+/* Smooth gradient animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+}
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #4d4b5f, #382ea5, #0054d3);
+    color: #ff0000;
+}
+
+/* Glass cards */
+.page > div, .group {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 40px rgba(255, 0, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+/* Neon hover effect */
+.group:hover {
+    box-shadow: 0 0 30px #000000, 0 0 50px #ff00ff;
+    transform: translateY(-5px) scale(1.02);
+}
+button, a[class*="bg-gradient"] {
+    background: linear-gradient(45deg, #00fff7, #ff00ff);
+    color: #7901014d;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff;
+    transition: all 0.3s ease;
+}
+
+button:hover, a[class*="bg-gradient"]:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px #00fff7, 0 0 40px #ff00ff;
+}
+
+/* Gradient text */
+h1, h2, h3, h4, h5 {
+    background: linear-gradient(90deg, #0004ff, #1100ff, #2600ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0,255,255,0.05), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: rotateOverlay 60s linear infinite;
+}
+
+@keyframes rotateOverlay {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+#bg-canvas {
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+/* --- Naye Page Transition Animations --- */
+@keyframes slideInFromRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutToLeft {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-20px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.page {
+    display: none; /* Sab pages default mein chhupe honge */
+    animation: fadeIn 0.4s ease-out;
+}
+
+.page.active {
+    display: block;
+}
+
+/* JavaScript se page transition control karne ke liye class */
+.page-enter {
+    animation: slideInFromRight 0.4s ease-out forwards;
+}
+.page-exit {
+    animation: slideOutToLeft 0.4s ease-out forwards;
+}
+
+/* --- Favorite Icon Style --- */
+.fav-icon.favorited svg {
+    fill: #ef4444; /* Laal */
+    stroke: #ef4444;
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #cdd3bd;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #a8b5c1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8e9ca9;
+}
+
+/* --- Splash Screen Animation --- */
+@keyframes web-load {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+.loading-bar {
+    animation: web-load 1.5s ease-out forwards;
+}
