@@ -1,0 +1,470 @@
+
+    <!DOCTYPE html>
+    <html>
+    
+<!-- Mirrored from cdsjarni.vercel.app/subject?id=133 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Sep 2025 05:47:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>KAKA's Journey - PaPa</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com/">
+      <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&amp;family=Rajdhani:wght@500;600&amp;display=swap" rel="stylesheet">
+      <style>
+        body {
+          font-family: 'Rajdhani', sans-serif;
+          max-width: 1200px;
+          margin: 0 auto;
+          margin-top: 60px;
+          padding: 20px;
+          background: #f8f9fa;
+        }
+        .telegram-overlay {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0, 123, 255, 0.75);
+          color: white;
+          padding: 10px 20px;
+          border-radius: 20px;
+          text-align: center;
+          cursor: pointer;
+          text-decoration: none;
+          font-weight: bold;
+          z-index: 999;
+        }
+    
+        .telegram-overlay:hover {
+          background: rgba(0, 123, 255, 0.9);
+        }
+
+        .lesson-card {
+          background: white;
+          border-radius: 12px;
+          padding: 20px;
+          margin-bottom: 20px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+          transition: all 0.3s ease;
+          border: 1px solid #eaeaea;
+        }
+        .lesson-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .lesson-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 24px;
+        }
+        .title-container {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          flex: 1;
+          min-width: 0;
+        }
+        .lesson-icon {
+          width: 40px;
+          height: 40px;
+          flex-shrink: 0;
+        }
+        .lesson-title {
+          font-family: 'League Spartan', sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          margin: 0;
+          color: #2d3748;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .fixed-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          background: #FF671F;
+          color: white;
+          padding: 0 1rem;
+          z-index: 1000;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          height: 90px;
+        }
+        .back-button {
+          display: flex;
+          align-items: center;
+          color: white;
+          text-decoration: none;
+          padding: 8px;
+          margin-right: 12px;
+          border-radius: 50%;
+          transition: background-color 0.2s;
+        }
+        
+        .back-button:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .back-button svg {
+          width: 24px;
+          height: 24px;
+        }
+          
+          .header-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+          }
+        .watch-button {
+          font-family: 'League Spartan', sans-serif;
+          background: #2563eb;
+          color: white;
+          border: none;
+          padding: 10px 24px;
+          border-radius: 8px;
+          cursor: pointer;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          transition: all 0.2s ease;
+          flex-shrink: 0;
+          text-transform: uppercase;
+        }
+        .watch-button:hover {
+          background: #1d4ed8;
+          transform: translateY(-1px);
+        }
+        .lesson-date {
+          color: #64748b;
+          font-size: 16px;
+          margin-top: 12px;
+          display: none;
+          font-weight: 500;
+        }
+        .lesson-card.expanded .lesson-date {
+          display: block;
+        }
+        @media (max-width: 640px) {
+          body {
+            padding: 16px;
+          }
+          .lesson-header {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 16px;
+          }
+          .watch-button {
+            width: 60%;
+            text-align: center;
+            margin-left: 15%;
+          }
+          .lesson-title {
+            font-size: 20px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+    <div class="fixed-header">
+    <a href="javascript:history.back()" class="back-button" aria-label="Go back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5"/>
+        <path d="M12 19l-7-7 7-7"/>
+      </svg>
+    </a>
+    <h1 class="header-title">Batch: YANKEE BATCH (AFCAT-2 2025), Teacher: Anurag Tripathi, Subject: Maths</h1>
+  </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">1. SDT ka basics</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/QD20dQyOlmrQSSh8JjRuK1Dpq8rI2rDk6A1PzHOSMOFAW-XoGj4id3unWfpEdQU7.TRUkJA9uLHGlcK69')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">2. SDT type 2 doubts + type 3</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/8CzuMEg_mbYbkhhFE8WoI2IHxy_zrb3ulEFjjdkZWI4CqX8-gArEW3mpJik_2Ftu.cOMDAGWiA1vkRibr')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">3. SDT type 3 doubts + Boat basics</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/FVA8wO9Trq1NTsWIBXeVaT5kw94942EowyP4X1X0ea2Vlpa1xQFeI1_Nh9Ssadg_.SrYliM4EhdqgQvzi')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">4. Train based high level questions</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/qNG_JZIZQR-dqFQBngBHa3_4EXskOnz5Zs3W4pNHs4M6MtZGjszQXacZb5mtKjg-.7jmIItrDeOrFbZv9')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">5. Time and work - type 1 & 2</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/wxs4EuEPLsvGA8E4Yi5ua67BSAWiEd-i8A9SlSoDE5x5aCAkZqzHorg-VOpbQu81.CLl7qHscfpxz1bYb')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">6. Time and work - Type 2 doubts + Type 3</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/e2IKH3z0wGO9RhuId_R7-EbZT5mzSWUYQ4Y7NLr6ueV-U8OS9n2NRHep6Mfz_4w_.JFyKe0No8vdISJCj')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">7. Time and work final doubts + HW</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/748OF9dz5zVy5yjla_1WLXpzVpiIrZP1tpW1KWEIE7hj6PdraQNJv9KUxLwGezD_.c1lD2V6MvaMc6w3Z')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">8. Clock ji - Class 1</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/dUAF7AVOpr82L7pNiJj9tlZewUeCz8cfASZwE43WyxTAx54Dze-xzz-BF5DZZ4Ow.bby1AUh-NbBUkLcv')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">9. Clock high level</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/yeVey0vzu7iAF00iBVG2obR16XUAjuHeEZNeLG6rGIyllnMMiE86Bi5sopgx1pUW.J04ctrzbtXNpw_-b')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">10. Percentage Basics</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/xdTIL8YRWa-TTb4kXG6xv4LNp3R-eikxI3eEfyQzqsVpkHoxebiOtgLitO6uKzP6.ceE0kExbeSXM26_r')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">11. Percentage - Class 2</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/GuSxxtA8zfo1BPgfWRbQCmm6WfXq5IQ6Vgmhi6XKEvHutKkTvL0AiwR9m3z1nCcy.jBy0eXM8HVzQH-0G')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">12. Percentage doubts + Profit & Loss type 1</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/gF2VeOZLnXP25u2JEOUEk_3Pg6amLEmd6KJtkNRk8cw1_Q37GF1C5qmpcSnux2oQ.Jh0aE_xeuqz-NgQj')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">13. Profit & Loss type 2</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/HYW-ZQKhLFvU_qnSvnuq4rA-AKWw6RJOV1GK9nwMvE6esBru8d8EKGgExTGZ7VNR.FJCkN97A73DM8osn')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">14. Profit & Loss - Discount</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/T0Nx6z36j7OJpHmdELAZyaI0N1T8Z9TZ7k5EAX_SP3UkIqclMkeKZtfOAwB-hThi.B5xF3rQTQJMdgPIn')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">15. Beimaan Dukaandaar</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/vJsweMyaFIPQU8GIaY7b-KlcMPHGTUHjXrpoHHL4PP2paYQ1t5ZkiasdhZh3dcRC.OMinifoIwqIxU7eq')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">16. Na umr ki seema ho, na pyar ka ho bandhan</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/phufno2m6qkMEDuCQ5qg6MxU3x29BdTVIc4P62fdXs4LummmD_vvtk74aaiZbyM1.QoM4370wPbWw12Zb')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">17. Probability ji</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/B9MkfkYuC_Wz9dSRt1Wqs2-M_zwJ9EmjA0MJ_5eR3-OC7tTZVGHL_xOuzAH8mKTL.P1luDlMmpZHIx00V')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">18. Probability Class 2</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/G7mTjAvlb21Goohuhb4A6lP-Ovlrga0KzK2EGKNgw6QB75A8SazAUYKsrHfM1bbY.yzRcl4NyQUGpA4x9')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">19. Simple interest class 1</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/TkiOCT36nUydDpq5tkwKCwbaZ9QOB758lniRNW94I0RVlxhRFYCv-nGkpAtNh4mX.GNNYPr1Yb4NrR5Fn')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">20. SI khatam + CI basics</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/1pLCc-4gMTZKjxtPY3phFNtGdwWFh-yQk0x_l7C_E4SdrDmyWV2z6aRnDkLkSrw.sjiRFklSp7DHTXfT')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">21. CI khatam</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/MeZB6vCTal9hX7rSjIB06aYlgOYaoukEgf2BQFXq_o1NR4u2Qbh4n3GcyL0efpcB.WmeAn4SSCa3yyVyT')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">22. Mensuration for AFCAT</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/1HVt4tPhz3Jxf2fsgFGlJ8GgQ3whKLHufIo7zdzOf-wJn-A9WaZEiThXYFie3ELd.qoEoAYBLAX65YfXD')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">23. Mixture - every possible type</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/BCv8zWaLLCQwJ6EkKq0ps7gkTz5ekBPREtGRS2Gq8PGj2ozqRpa2kROvB7Sv_FP_.CFiBVanUm2UHyJlA')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">24. Math final revision - 1</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/9KnB8qlftxPuLBTNBBYPOSDQqtyDjDOCGaJrY1tbPOlkMa-zatBuyYlkTd8oZmi_.NCpMjWCFMe-Hi7Du')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+        <div class="lesson-card" onclick="this.classList.toggle('expanded')">
+          <div class="lesson-header">
+            <div class="title-container">
+              <img src="../cdn-icons-png.flaticon.com/512/4406/4406138.png" alt="Lesson" class="lesson-icon">
+              <h3 class="lesson-title">25. Math final revision - 2</h3>
+            </div>
+            <a href="#" class="watch-button" onclick="openUrl('https://us06web.zoom.us/rec/share/CFgnyGXEvsM5M7hSUTXp7ONSh3fF9M4Rj1NXpO_L0Tn9HhS2qMqdgiB_XalOoQZt._uWWdeEfKInc9eeM')">Watch Class</a>
+          </div>
+          <div class="lesson-date">Powered by KAKA</div>
+        </div>
+      
+      <a href="https:///+wX9BCdXmKjRhMDFl" target="_blank" class="telegram-overlay">
+    Join Telegram
+  </a>
+  <script>
+        function openUrl(url) {
+          window.location.href = url;
+        }
+      </script>
+    </body>
+    
+<!-- Mirrored from cdsjarni.vercel.app/subject?id=133 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Sep 2025 05:47:24 GMT -->
+</html>
+  
