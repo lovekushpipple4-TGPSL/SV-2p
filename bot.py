@@ -14,7 +14,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Get bot token from environment variable
-BOT_TOKEN = os.environ.get('8047178511:AAG6gC4UuW-Rd_qKyShZKFJmxIQoSz4cXoQ')
+BOT_TOKEN = os.environ.get('8426588584:AAHKfnTPUzjKKWILDyVa1ZnuujAEUlsuIEI')
 
 if not BOT_TOKEN:
     logger.error("❌ BOT_TOKEN environment variable not set!")
@@ -23,7 +23,7 @@ if not BOT_TOKEN:
 # ========== Original SWAPI Functions ==========
 def get_all_batches():
     """Fetch all available batches"""
-    url = "https://hackerfreesw.vercel.app/batches"
+    url = "https://s-v-web.vercel.app/batches"
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
@@ -34,7 +34,7 @@ def get_all_batches():
 
 def get_batch_details(batch_id):
     """Fetch detailed information for a specific batch"""
-    url = f"https://hackerfreesw.vercel.app/extract/batch_id={batch_id}"
+    url = f"https://s-v-web.vercel.app/extract/batch_id={batch_id}"
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
